@@ -29,4 +29,6 @@ A script needs full access to be able to run. We can use a function called
 change mode or chmod. You can use numbers to change permissions by group,
 for example to change permission to all permissions for all users:
 
-' chmod 777 example.txt '
+```bash
+chmod 777 example.txt 
+```
