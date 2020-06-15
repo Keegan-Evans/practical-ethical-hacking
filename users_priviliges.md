@@ -13,7 +13,7 @@ directory. The output for each line will look something like this:
 
 The first place string of letters at the beginning tells you if it is
 a file or directory:
-- - : a file
+- \- : a file
 - d : a directory
 
 The three groups of three places tells about file permissions. The groups
