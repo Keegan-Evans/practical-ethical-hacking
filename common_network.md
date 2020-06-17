@@ -33,3 +33,11 @@ netstat -ano
 ```
 
 Shows what connections are open and which are talking. 
+
+```
+route
+```
+
+Shows routing table, tells where traffic is going out. Lets you find if
+there are multiple connections.
+
